@@ -1,9 +1,12 @@
 import React from "react";
 
-const TodoItem: React.FC<{ text: string }> = (props) => {
+const TodoItem: React.FC<{
+  text: string;
+  onRemoveTodo: (event: React.MouseEvent) => void;
+}> = (props) => {
   return (
     <>
-      <li>{props.text}</li>
+      <li onClick={props.onRemoveTodo}>{props.text}</li>
     </>
   );
 };
